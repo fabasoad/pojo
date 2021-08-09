@@ -1,5 +1,7 @@
 # POJO testing library
 
+![Unit Tests](https://github.com/fabasoad/pojo/workflows/Unit%20Tests/badge.svg)
+
 ## Testing example
 
 ### Java
