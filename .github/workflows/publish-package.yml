@@ -9,6 +9,7 @@ on:
 
 jobs:
   publish:
+    name: Publish
     runs-on: ubuntu-latest
     permissions:
       contents: read
@@ -25,3 +26,5 @@ jobs:
         run: gradle publish
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          PACKAGES_GITHUB_ACTOR: ${{ secrets.PACKAGES_GITHUB_ACTOR }}
+          PACKAGES_GITHUB_TOKEN: ${{ secrets.PACKAGES_GITHUB_TOKEN }}
