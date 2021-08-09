@@ -1,8 +1,23 @@
 # POJO testing library
 
-![Unit Tests](https://github.com/fabasoad/pojo/workflows/Unit%20Tests/badge.svg)
+![GitHub release](https://img.shields.io/github/v/release/fabasoad/pojo?include_prereleases) ![Unit Tests](https://github.com/fabasoad/pojo/workflows/Unit%20Tests/badge.svg)
 
-## Testing example
+## Import
+
+1. Add [GitHub Packages](https://docs.github.com/en/packages/working-with-a-github-packages-registry/working-with-the-apache-maven-registry#authenticating-to-github-packages) maven server to `pom.xml`
+2. Import `pojo` dependency.
+
+### Maven
+
+```xml
+<dependency>
+  <groupId>io.fabasoad</groupId>
+  <artifactId>pojo</artifactId>
+  <version>0.1.0</version>
+</dependency>
+```
+
+## Examples
 
 ### Java
 ```java
