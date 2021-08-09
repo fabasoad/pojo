@@ -33,9 +33,8 @@ class FieldsTesterSpec extends Specification {
     def builder = PojoValidatorBuilder.create(PACKAGE_NAME)
 
     when:
-    def validator = builder.with(new FieldsTester(rule)).build()
     builder
-        .with(new FieldsTester(new FieldsMustBeFinalRule()))
+        .with(new FieldsTester(rule))
         .build()
         .validate((c) -> expected.contains(c.getSimpleName()))
 

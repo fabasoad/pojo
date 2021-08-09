@@ -17,8 +17,12 @@ public class PojoValidatorBuilder {
   }
 
   public static PojoValidatorBuilder create(final String packageName) {
+    return create(packageName, false);
+  }
+
+  public static PojoValidatorBuilder create(final String packageName, final boolean recursive) {
     final Reflections reflections = new Reflections();
-    return new PojoValidatorBuilder(reflections.getClasses(packageName));
+    return new PojoValidatorBuilder(reflections.getClasses(packageName, recursive));
   }
 
   public <T extends Rule> PojoValidatorBuilder with(final Tester<T> tester) {
