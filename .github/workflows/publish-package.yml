@@ -26,5 +26,3 @@ jobs:
         run: gradle publish
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          PACKAGES_GITHUB_ACTOR: ${{ github.event.pusher.name }}
-          PACKAGES_GITHUB_TOKEN: ${{ secrets.PACKAGES_GITHUB_TOKEN }}
