@@ -4,10 +4,10 @@ name: Unit Tests
 on:
   push:
     branches:
-      - 'main'
-      - 'bugfix/**'
       - 'dependabot/*'
       - 'feature-**'
+      - 'fix-**'
+      - 'main'
       - 'snyk-upgrade-**'
 
 env:
@@ -31,12 +31,3 @@ jobs:
         run: ./gradlew build
       - name: Unit tests
         run: ./gradlew test
-        if: github.event_name == 'push' && github.ref == 'refs/heads/main'
-      - name: Unit tests with coverage
-        uses: paambaati/codeclimate-action@v2.7.5
-        if: github.ref != 'refs/heads/main'
-        env:
-          CC_TEST_REPORTER_ID: ${{ secrets.CC_TEST_REPORTER_ID }}
-        with:
-          coverageCommand: ./gradlew test
-          debug: true
