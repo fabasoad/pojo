@@ -7,7 +7,7 @@ on:
       - 'main'
       - 'bugfix/**'
       - 'dependabot/*'
-      - 'feature/**'
+      - 'feature-**'
       - 'snyk-upgrade-**'
 
 env:
