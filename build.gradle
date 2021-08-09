@@ -1,0 +1,21 @@
+plugins {
+    id 'groovy'
+    id 'java'
+}
+
+group 'io.fabasoad'
+version '0.0.1'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    implementation 'com.google.guava:guava:30.1.1-jre'
+    testImplementation 'org.codehaus.groovy:groovy-all:3.0.8'
+    testImplementation 'org.spockframework:spock-core:2.0-groovy-3.0'
+}
+
+test {
+    useJUnitPlatform()
+}
