@@ -6,7 +6,7 @@ import java.lang.reflect.Field;
 import java.lang.reflect.Method;
 import java.util.Objects;
 
-public class GetterPrefixAnyMethodExtractorAdapter implements MethodExtractorAdapter {
+public class GetterPrefixAutoMethodExtractorAdapter implements MethodExtractorAdapter {
 
   @Override
   public Method getMethod(Class<?> clazz, Field field) {

@@ -8,11 +8,11 @@ import spock.lang.Specification
 
 class GettersTesterSpec extends Specification {
 
-  def PACKAGE_NAME = "io.fabasoad.pojo.validator.fixture.getters"
+  static PACKAGE_NAME = "io.fabasoad.pojo.validator.fixture.getters"
 
   def "Getters must exist with default setting"() {
     given:
-    def builder = PojoValidatorBuilder.create(PACKAGE_NAME)
+    def builder = PojoValidatorBuilder.create(PACKAGE_NAME + ".auto")
 
     when:
     def validator = builder.with(new GettersTester(new GettersMustExistRule())).build()
@@ -32,10 +32,11 @@ class GettersTesterSpec extends Specification {
     validator.validate(filter)
 
     where:
-    prefix           | filter
-    GetterPrefix.ANY | (c) -> true
-    GetterPrefix.NO  | (c) -> "A" == c.getSimpleName()
-    GetterPrefix.YES | (c) -> "B" == c.getSimpleName()
+    prefix                        | filter
+    GetterPrefix.auto()           | { ["A", "B"].contains it.simpleName }
+    GetterPrefix.without()        | { "A" == it.simpleName }
+    GetterPrefix.with()           | { "B" == it.simpleName }
+    GetterPrefix.with("retrieve") | { "C" == it.simpleName }
   }
 
   def "Getters must exist with any setting :: negative"() {
@@ -49,8 +50,9 @@ class GettersTesterSpec extends Specification {
     thrown(ValidationException)
 
     where:
-    rule                                       | filter
-    new GettersMustExistRule(GetterPrefix.NO)  | (c) -> "B" == c.getSimpleName()
-    new GettersMustExistRule(GetterPrefix.YES) | (c) -> "A" == c.getSimpleName()
+    rule                                                   | filter
+    new GettersMustExistRule(GetterPrefix.without())       | { "B" == it.simpleName }
+    new GettersMustExistRule(GetterPrefix.with())          | { "A" == it.simpleName }
+    new GettersMustExistRule(GetterPrefix.with("unknown")) | { ["A", "B", "C"].contains it.simpleName }
   }
 }
