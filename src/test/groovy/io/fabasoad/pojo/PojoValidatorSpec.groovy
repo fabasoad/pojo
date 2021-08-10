@@ -44,7 +44,7 @@ class PojoValidatorSpec extends Specification {
 
     where:
     recursive | packageName                                 | expected
-    true      | "io.fabasoad.pojo.validator.fixture"        | [io.fabasoad.pojo.validator.fixture.getters.A, io.fabasoad.pojo.validator.fixture.getters.B, A, B, C, D, E]
+    true      | "io.fabasoad.pojo.validator.fixture"        | [io.fabasoad.pojo.validator.fixture.getters.A, io.fabasoad.pojo.validator.fixture.getters.B, io.fabasoad.pojo.validator.fixture.getters.C, io.fabasoad.pojo.validator.fixture.getters.auto.A, io.fabasoad.pojo.validator.fixture.getters.auto.B, A, B, C, D, E]
     false     | "io.fabasoad.pojo.validator.fixture.fields" | [A, B, C, D, E]
   }
 }
