@@ -31,6 +31,8 @@ jobs:
         with:
           languages: ${{ matrix.language }}
       - name: Build with Gradle
+        env:
+          SKIP_FINALIZE: true
         run: ./gradlew build
       - name: Perform CodeQL Analysis
         uses: github/codeql-action/analyze@v2
