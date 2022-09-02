@@ -18,9 +18,10 @@ public class GetterPrefixAutoMethodExtractorAdapter implements MethodExtractorAd
       try {
         return methodExtractorAdapter.getMethod(clazz, field);
       } catch (ValidationException e2) {
-        final String message = Objects.equals(e1.getMessage(), e2.getMessage())
-          ? e1.getMessage()
-          : String.format("%s %s", e1.getMessage(), e2.getMessage());
+        final String message =
+            Objects.equals(e1.getMessage(), e2.getMessage())
+                ? e1.getMessage()
+                : String.format("%s %s", e1.getMessage(), e2.getMessage());
         throw new ValidationException(message, new AggregateException(e1, e2));
       }
     }

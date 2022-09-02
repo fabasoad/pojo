@@ -20,6 +20,7 @@
 ## Examples
 
 ### Java
+
 ```java
 public class PojoTest {
   // The package to test
@@ -45,7 +46,7 @@ public class PojoTest {
 class PojoSpec extends Specification {
   // The package to test
   def PACKAGE_NAME = "io.fabasoad.pojo";
-  
+
   def "Getters and fields must follow the rules"() {
     given:
     def builder = PojoValidatorBuilder.create(PACKAGE_NAME)

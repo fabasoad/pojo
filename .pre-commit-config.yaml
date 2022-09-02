@@ -1,6 +1,6 @@
 ---
 default_stages: ["commit"]
-exclude: ^(.gitleaks\.toml|dist/.*\.js)$
+exclude: ^(.gitleaks\.toml|gradlew\.bat)$
 repos:
   - repo: local
     hooks:
@@ -39,10 +39,6 @@ repos:
     hooks:
       - id: pmd
         exclude: /test/
-      - id: cpd
-        exclude: /test/
-      - id: checkstyle
-        exclude: /test
   - repo: https://github.com/macisamuele/language-formatters-pre-commit-hooks
     rev: v2.4.0
     hooks:

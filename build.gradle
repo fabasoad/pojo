@@ -47,6 +47,8 @@ def taskPreCommit = tasks.register('pre-commit') {
     doLast {
         exec {
             commandLine 'pre-commit', 'install', '--hook-type', 'pre-commit'
+        }
+        exec {
             commandLine 'pre-commit', 'install', '--hook-type', 'pre-push'
         }
     }
