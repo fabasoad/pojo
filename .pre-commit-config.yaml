@@ -70,4 +70,4 @@ repos:
       - id: trailing-whitespace
 ci:
   autofix_prs: false
-  skip: [build, test, pmd]
+  skip: [build, test, pmd, pretty-format-java]
