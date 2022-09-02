@@ -19,14 +19,10 @@ public class Reflections {
     } catch (IOException e) {
       throw new ReflectionsException("Failed to read class path", e);
     }
-    final Predicate<ClassInfo> filter = recursive
-        ? c -> c.getPackageName().startsWith(packageName)
-        : c -> c.getPackageName().equalsIgnoreCase(packageName);
-    return classPath
-        .getAllClasses()
-        .stream()
-        .filter(filter)
-        .map(ClassInfo::load)
-        .collect(toSet());
+    final Predicate<ClassInfo> filter =
+        recursive
+            ? c -> c.getPackageName().startsWith(packageName)
+            : c -> c.getPackageName().equalsIgnoreCase(packageName);
+    return classPath.getAllClasses().stream().filter(filter).map(ClassInfo::load).collect(toSet());
   }
 }

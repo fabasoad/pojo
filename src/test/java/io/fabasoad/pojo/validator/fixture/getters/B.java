@@ -1,9 +1,6 @@
 package io.fabasoad.pojo.validator.fixture.getters;
 
-/**
- * Field: private, not final
- * Getter: public, final, "get" prefix
- */
+/** Field: private, not final. Getter: public, final, "get" prefix */
 public class B {
   private String name;
   private boolean active;

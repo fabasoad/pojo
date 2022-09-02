@@ -13,7 +13,7 @@ repositories {
 
 dependencies {
     implementation 'com.google.guava:guava:31.1-jre'
-    implementation 'org.codehaus.groovy:groovy-all:3.0.12'
+    implementation 'org.apache.groovy:groovy-all:4.0.4'
     testImplementation 'org.spockframework:spock-core:2.2-groovy-4.0'
 }
 
@@ -42,3 +42,19 @@ publishing {
         }
     }
 }
+
+def taskPreCommit = tasks.register('pre-commit') {
+    onlyIf {
+        System.getenv('SKIP_FINALIZE') == null || System.getenv('SKIP_FINALIZE') == 'false'
+    }
+    doLast {
+        exec {
+            commandLine 'pre-commit', 'install', '--hook-type', 'pre-commit'
+        }
+        exec {
+            commandLine 'pre-commit', 'install', '--hook-type', 'pre-push'
+        }
+    }
+}
+
+build.configure { finalizedBy taskPreCommit }

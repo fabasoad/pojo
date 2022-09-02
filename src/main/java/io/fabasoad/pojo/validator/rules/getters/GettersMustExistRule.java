@@ -22,9 +22,10 @@ public class GettersMustExistRule implements GetterRule {
       final Method method = prefix.getMethod(clazz, field);
 
       if (method.getReturnType() != field.getType()) {
-        throw new ValidationException(String.format(
-            "Expected return type of '%s' method is %s but %s is found",
-            method.getName(), field.getType().getName(), method.getReturnType().getName()));
+        throw new ValidationException(
+            String.format(
+                "Expected return type of '%s' method is %s but %s is found",
+                method.getName(), field.getType().getName(), method.getReturnType().getName()));
       }
     }
   }

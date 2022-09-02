@@ -1,12 +1,11 @@
 <!-- markdownlint-disable-file MD041 -->
 
-Closes #{IssueNumber}
-
 ## Pull request checklist
 
 Please check if your PR fulfills the following requirements:
 
-- [ ] I have read the [CONTRIBUTING](https://github.com/fabasoad/setup-umka-action/blob/main/CONTRIBUTING.md) doc.
+- [ ] I have read the [CONTRIBUTING](https://github.com/fabasoad/pojo/blob/main/CONTRIBUTING.md)
+doc.
 - [ ] Tests for the changes have been added (for bug fixes / features).
 - [ ] Docs have been reviewed and added / updated if needed (for bug fixes / features).
 - [ ] Build was run locally and any changes were pushed.
@@ -49,3 +48,7 @@ Please check the type of change your PR introduces:
 
 <!-- Any other information that is important to this PR such as screenshots of how the component looks before and after the change. -->
 <!-- This document was adapted from the open-source [appium/appium](https://github.com/appium/appium/blob/master/.github/PULL_REQUEST_TEMPLATE.md) repository. -->
+
+---
+
+Closes #{IssueNumber}
