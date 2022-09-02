@@ -44,6 +44,9 @@ publishing {
 }
 
 def taskPreCommit = tasks.register('pre-commit') {
+    onlyIf {
+        System.getenv('SKIP_FINALIZE') == null || System.getenv('SKIP_FINALIZE') == 'false'
+    }
     doLast {
         exec {
             commandLine 'pre-commit', 'install', '--hook-type', 'pre-commit'
