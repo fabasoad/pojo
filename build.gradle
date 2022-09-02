@@ -42,3 +42,14 @@ publishing {
         }
     }
 }
+
+def taskPreCommit = tasks.register('pre-commit') {
+    doLast {
+        exec {
+            commandLine 'pre-commit', 'install', '--hook-type', 'pre-commit'
+            commandLine 'pre-commit', 'install', '--hook-type', 'pre-push'
+        }
+    }
+}
+
+build.configure { finalizedBy taskPreCommit }

@@ -1,6 +1,6 @@
 # POJO testing library
 
-![GitHub release](https://img.shields.io/github/v/release/fabasoad/pojo?include_prereleases) ![Unit Tests](https://github.com/fabasoad/pojo/workflows/Unit%20Tests/badge.svg)
+![GitHub release](https://img.shields.io/github/v/release/fabasoad/pojo?include_prereleases) ![Unit Tests](https://github.com/fabasoad/pojo/workflows/Unit%20Tests/badge.svg) ![Security Tests](https://github.com/fabasoad/pojo/workflows/Security%20Tests/badge.svg) [![pre-commit.ci status](https://results.pre-commit.ci/badge/github/fabasoad/pojo/main.svg)](https://results.pre-commit.ci/latest/github/fabasoad/pojo/main) [![BCH compliance](https://bettercodehub.com/edge/badge/fabasoad/pojo?branch=main)](https://bettercodehub.com/) [![Known Vulnerabilities](https://snyk.io/test/github/fabasoad/pojo/badge.svg?targetFile=package.json)](https://snyk.io/test/github/fabasoad/pojo?targetFile=package.json)
 
 ## Import
 
