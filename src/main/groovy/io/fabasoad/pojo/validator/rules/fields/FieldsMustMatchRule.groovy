@@ -6,7 +6,7 @@ import java.util.regex.Pattern
 /**
  * This rule checks that fields' names must match regex.
  *
- * Positive examples in case regex is "$(_.+)^":
+ * Positive examples in case regex is "_.+":
  * <code>
  *  public class Pojo1 {
  *    private final byte _code;
@@ -16,7 +16,7 @@ import java.util.regex.Pattern
  *  public record Pojo2(String name) {}
  * </code>
  *
- * Negative examples in case regex is "$(_.+)^":
+ * Negative examples in case regex is "_.+":
  * <code>
  *   public class Pojo {
  *     String name;
