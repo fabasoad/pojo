@@ -1,10 +1,15 @@
 # POJO testing library
 
-![GitHub release](https://img.shields.io/github/v/release/fabasoad/pojo?include_prereleases) ![Unit Tests](https://github.com/fabasoad/pojo/workflows/Unit%20Tests/badge.svg) ![Security Tests](https://github.com/fabasoad/pojo/workflows/Security%20Tests/badge.svg) [![pre-commit.ci status](https://results.pre-commit.ci/badge/github/fabasoad/pojo/main.svg)](https://results.pre-commit.ci/latest/github/fabasoad/pojo/main) [![Known Vulnerabilities](https://snyk.io/test/github/fabasoad/pojo/badge.svg)](https://snyk.io/test/github/fabasoad/pojo)
+![GitHub release](https://img.shields.io/github/v/release/fabasoad/pojo?include_prereleases)
+![Unit Tests](https://github.com/fabasoad/pojo/workflows/Unit%20Tests/badge.svg)
+![Security Tests](https://github.com/fabasoad/pojo/workflows/Security%20Tests/badge.svg)
+[![pre-commit.ci status](https://results.pre-commit.ci/badge/github/fabasoad/pojo/main.svg)](https://results.pre-commit.ci/latest/github/fabasoad/pojo/main)
+[![Known Vulnerabilities](https://snyk.io/test/github/fabasoad/pojo/badge.svg)](https://snyk.io/test/github/fabasoad/pojo)
 
 ## Import
 
-1. Add [GitHub Packages](https://docs.github.com/en/packages/working-with-a-github-packages-registry/working-with-the-apache-maven-registry#authenticating-to-github-packages) maven server to `pom.xml`
+1. Add [GitHub Packages](https://docs.github.com/en/packages/working-with-a-github-packages-registry/working-with-the-apache-maven-registry#authenticating-to-github-packages)
+   maven server to `pom.xml`
 2. Import `pojo` dependency.
 
 ### Maven
