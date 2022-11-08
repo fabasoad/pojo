@@ -1,6 +1,6 @@
 ---
 default_stages: ["commit"]
-exclude: ^(.gitleaks\.toml|gradlew\.bat)$
+exclude: ^(\.gitleaks\.toml|gradlew\.bat)$
 repos:
   - repo: local
     hooks:
