@@ -4,10 +4,8 @@ name: Unit Tests
 on:
   push:
     branches:
-      - 'dependabot/**'
-      - 'feature-**'
-      - 'fix-**'
       - 'main'
+  pull_request:
 
 jobs:
   unit_tests:
