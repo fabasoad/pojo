@@ -26,7 +26,7 @@ repos:
       - id: detect-secrets
         stages: ["commit", "push"]
   - repo: https://github.com/zricethezav/gitleaks
-    rev: v8.15.1
+    rev: v8.15.2
     hooks:
       - id: gitleaks
         stages: ["commit", "push"]
@@ -42,7 +42,7 @@ repos:
       - id: pmd
         exclude: /test/
   - repo: https://github.com/macisamuele/language-formatters-pre-commit-hooks
-    rev: v2.4.0
+    rev: v2.5.0
     hooks:
       - id: pretty-format-java
         args: [--autofix]
