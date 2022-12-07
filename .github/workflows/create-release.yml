@@ -45,7 +45,3 @@ jobs:
             ${{ steps.changelog.outputs.body }}
           draft: false
           prerelease: false
-      - name: Bump tags
-        uses: fischerscode/tagger@v0
-        with:
-          prefix: v
