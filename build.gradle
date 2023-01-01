@@ -13,7 +13,7 @@ repositories {
 
 dependencies {
     implementation 'com.google.guava:guava:31.1-jre'
-    implementation 'org.apache.groovy:groovy-all:4.0.6'
+    implementation 'org.apache.groovy:groovy-all:4.0.7'
     testImplementation 'org.spockframework:spock-core:2.3-groovy-4.0'
 }
 
