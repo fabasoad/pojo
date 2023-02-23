@@ -1,5 +1,6 @@
 # POJO testing library
 
+[![Stand With Ukraine](https://raw.githubusercontent.com/vshymanskyy/StandWithUkraine/main/badges/StandWithUkraine.svg)](https://stand-with-ukraine.pp.ua)
 ![GitHub release](https://img.shields.io/github/v/release/fabasoad/pojo?include_prereleases)
 ![Unit Tests](https://github.com/fabasoad/pojo/workflows/Unit%20Tests/badge.svg)
 ![Security Tests](https://github.com/fabasoad/pojo/workflows/Security%20Tests/badge.svg)
