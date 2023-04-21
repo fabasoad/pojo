@@ -44,15 +44,15 @@ publishing {
     }
 }
 
-def taskPreCommit = tasks.register('pre-commit') {
+def taskMake = tasks.register('make') {
     onlyIf {
         System.getenv('SKIP_FINALIZE') == null || System.getenv('SKIP_FINALIZE') == 'false'
     }
     doLast {
         exec {
-            commandLine 'pre-commit', 'install'
+            commandLine 'make', 'install'
         }
     }
 }
 
-build.configure { finalizedBy taskPreCommit }
+build.configure { finalizedBy taskMake }
