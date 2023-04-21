@@ -18,14 +18,14 @@ jobs:
     steps:
       - name: Checkout repository
         uses: actions/checkout@v3
-      - name: Get java version
-        id: java-version
+      - name: Get versions
+        id: versions
         run: |
-          major=$(cut -c 1-2 .java-version)
-          echo "MAJOR=$major" >> $GITHUB_OUTPUT
+          java_version=$(grep -Eo 'java [a-z0-9.-]+' .tool-versions | cut -d'-' -f2)
+          echo "java=$java_version" >> $GITHUB_OUTPUT
       - uses: actions/setup-java@v3
         with:
-          java-version: ${{ steps.java-version.outputs.MAJOR }}
+          java-version: ${{ steps.versions.outputs.java }}
           distribution: adopt
       - name: Validate Gradle wrapper
         uses: gradle/wrapper-validation-action@v1
