@@ -1,5 +1,5 @@
 ---
-name: Security Tests
+name: Security
 
 on:
   push:
@@ -8,7 +8,7 @@ on:
   pull_request:
 
 jobs:
-  codeql_tests:
+  codeql:
     name: CodeQL
     runs-on: ubuntu-latest
     strategy:
