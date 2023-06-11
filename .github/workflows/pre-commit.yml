@@ -11,15 +11,14 @@ defaults:
   run:
     shell: sh
 
-env:
-  SKIP: no-commit-to-branch, build, snyk-test, test
-
 jobs:
   pre-commit:
     runs-on: ubuntu-latest
     container:
       image: ghcr.io/fabasoad/pre-commit-container:latest
       options: --user root
+    env:
+      SKIP: no-commit-to-branch, build, snyk-test, test
     steps:
       - uses: actions/checkout@v3
         with:
