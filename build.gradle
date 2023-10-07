@@ -2,7 +2,7 @@ plugins {
     id 'groovy'
     id 'java'
     id 'maven-publish'
-    id 'com.github.ben-manes.versions' version '0.47.0'
+    id 'com.github.ben-manes.versions' version '0.48.0'
 }
 
 group 'io.fabasoad'
@@ -14,7 +14,7 @@ repositories {
 
 dependencies {
     implementation 'com.google.guava:guava:32.1.2-jre'
-    implementation 'org.apache.groovy:groovy-all:4.0.14'
+    implementation 'org.apache.groovy:groovy-all:4.0.15'
     testImplementation 'org.spockframework:spock-core:2.4-M1-groovy-4.0'
 }
 
