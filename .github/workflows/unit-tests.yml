@@ -13,13 +13,15 @@ jobs:
     timeout-minutes: 5
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
+      - name: Checkout ${{ github.repository }}
+        uses: actions/checkout@v4
       - name: Get versions
         id: versions
         run: |
           java_version=$(grep -Eo 'java [a-z0-9.-]+' .tool-versions | cut -d'-' -f2)
           echo "java=$java_version" >> $GITHUB_OUTPUT
-      - uses: actions/setup-java@v3
+      - name: Setup Java
+        uses: actions/setup-java@v3
         with:
           java-version: ${{ steps.versions.outputs.java }}
           distribution: temurin
