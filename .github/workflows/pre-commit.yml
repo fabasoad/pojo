@@ -19,7 +19,8 @@ jobs:
     env:
       SKIP: no-commit-to-branch, build, snyk-test, test
     steps:
-      - uses: actions/checkout@v4
+      - name: Checkout ${{ github.repository }}
+        uses: actions/checkout@v4
         with:
           fetch-depth: 0
       - name: Update git config
