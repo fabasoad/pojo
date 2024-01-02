@@ -4,7 +4,7 @@
 ![GitHub release](https://img.shields.io/github/v/release/fabasoad/pojo?include_prereleases)
 ![unit-tests](https://github.com/fabasoad/pojo/actions/workflows/unit-tests.yml/badge.svg)
 ![security](https://github.com/fabasoad/pojo/actions/workflows/security.yml/badge.svg)
-![pre-commit](https://github.com/fabasoad/pojo/actions/workflows/pre-commit.yml/badge.svg)
+![linting](https://github.com/fabasoad/pojo/actions/workflows/linting.yml/badge.svg)
 [![Known Vulnerabilities](https://snyk.io/test/github/fabasoad/pojo/badge.svg)](https://snyk.io/test/github/fabasoad/pojo)
 
 ## Import

@@ -8,7 +8,7 @@ on:
   pull_request:
 
 jobs:
-  unit_tests:
+  unit-tests:
     name: Test
     timeout-minutes: 5
     runs-on: ubuntu-latest
@@ -27,7 +27,7 @@ jobs:
           distribution: temurin
       - name: Validate Gradle wrapper
         uses: gradle/wrapper-validation-action@v1
-      - name: Build with Gradle
+      - name: Build
         env:
           SKIP_FINALIZE: true
         run: ./gradlew build

@@ -1,20 +1,20 @@
 ---
 name: Security
 
-on:
+on: # yamllint disable-line rule:truthy
   push:
     branches:
       - 'main'
   pull_request:
 
+defaults:
+  run:
+    shell: sh
+
 jobs:
-  codeql:
-    name: CodeQL
+  code-scanning:
+    name: Code scanning
     runs-on: ubuntu-latest
-    strategy:
-      fail-fast: false
-      matrix:
-        language: ['java']
     steps:
       - name: Checkout ${{ github.repository }}
         uses: actions/checkout@v4
@@ -22,7 +22,7 @@ jobs:
         id: versions
         run: |
           java_version=$(grep -Eo 'java [a-z0-9.-]+' .tool-versions | cut -d'-' -f2)
-          echo "java=$java_version" >> $GITHUB_OUTPUT
+          echo "java=${java_version}" >> $GITHUB_OUTPUT
       - name: Setup Java
         uses: actions/setup-java@v4
         with:
@@ -31,12 +31,37 @@ jobs:
       - name: Validate Gradle wrapper
         uses: gradle/wrapper-validation-action@v1
       - name: Initialize CodeQL
-        uses: github/codeql-action/init@v2
+        uses: github/codeql-action/init@v3
         with:
-          languages: ${{ matrix.language }}
-      - name: Build with Gradle
+          languages: "java"
+      - name: Build
         env:
           SKIP_FINALIZE: true
         run: ./gradlew build
       - name: Perform CodeQL Analysis
-        uses: github/codeql-action/analyze@v2
+        id: codeql-analysis
+        uses: github/codeql-action/analyze@v3
+      - name: Upload to GHAS
+        if: always()
+        uses: github/codeql-action/upload-sarif@v3
+        with:
+          category: "code-scanning"
+          sarif_file: "${{ steps.codeql-analysis.outputs.sarif-output }}"
+  directory-scanning:
+    name: Directory scanning
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout ${{ github.repository }}
+        uses: actions/checkout@v4
+      - name: Scan current project
+        id: scan-directory
+        uses: anchore/scan-action@v3
+        with:
+          by-cve: "true"
+          path: "."
+      - name: Upload to GHAS
+        if: always()
+        uses: github/codeql-action/upload-sarif@v3
+        with:
+          category: "directory-scanning"
+          sarif_file: "${{ steps.scan-directory.outputs.sarif }}"
