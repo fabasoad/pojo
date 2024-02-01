@@ -26,7 +26,7 @@ jobs:
           java-version: ${{ steps.versions.outputs.java }}
           distribution: temurin
       - name: Validate Gradle wrapper
-        uses: gradle/wrapper-validation-action@v1
+        uses: gradle/wrapper-validation-action@v2
       - name: Build
         env:
           SKIP_FINALIZE: true
