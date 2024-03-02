@@ -1,2 +1,2 @@
-java openjdk-20
-pre-commit 3.6.0
+java openjdk-22
+pre-commit 3.6.2
