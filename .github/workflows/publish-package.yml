@@ -20,7 +20,7 @@ jobs:
         id: versions
         run: |
           java_version=$(grep -Eo 'java [a-z0-9.-]+' .tool-versions | cut -d'-' -f2)
-          echo "java=$java_version" >> $GITHUB_OUTPUT
+          echo "java=$java_version" >> "$GITHUB_OUTPUT"
       - name: Setup Java
         uses: actions/setup-java@v4
         with:
