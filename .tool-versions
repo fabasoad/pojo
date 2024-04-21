@@ -1,2 +1,2 @@
-java openjdk-22
+java openjdk-21
 pre-commit 3.7.0
