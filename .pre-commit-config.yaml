@@ -26,40 +26,40 @@ repos:
       - id: detect-secrets
         stages: ["commit", "push"]
   - repo: https://github.com/gitleaks/gitleaks
-    rev: v8.18.1
+    rev: v8.18.2
     hooks:
       - id: gitleaks
         stages: ["commit", "push"]
   - repo: https://github.com/fabasoad/pre-commit-snyk
-    rev: v0.5.0
+    rev: v0.6.1
     hooks:
       - id: snyk-test
         stages: ["push"]
   # Java
   - repo: https://github.com/dustinsand/pre-commit-jvm
-    rev: v0.9.0
+    rev: v0.11.0
     hooks:
       - id: pmd
         args: ['-R', 'java-basic,java-empty,java-imports,java-unnecessary,java-unusedcode', '-dir', '.']
         exclude: /test/
   - repo: https://github.com/macisamuele/language-formatters-pre-commit-hooks
-    rev: v2.12.0
+    rev: v2.13.0
     hooks:
       - id: pretty-format-java
         args: [--autofix]
   # Markdown
   - repo: https://github.com/igorshubovych/markdownlint-cli
-    rev: v0.38.0
+    rev: v0.39.0
     hooks:
       - id: markdownlint
   # Yaml
   - repo: https://github.com/adrienverge/yamllint
-    rev: v1.33.0
+    rev: v1.35.1
     hooks:
       - id: yamllint
   # Other
   - repo: https://github.com/pre-commit/pre-commit-hooks
-    rev: v4.5.0
+    rev: v4.6.0
     hooks:
       - id: check-merge-conflict
       - id: check-json
