@@ -28,7 +28,7 @@ jobs:
       - name: Setup gradle
         uses: gradle/actions/setup-gradle@v3
         with:
-          gradle-version: "8.6"
+          gradle-version: "8.7"
       - name: Build
         env:
           SKIP_FINALIZE: true
