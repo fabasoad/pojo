@@ -31,7 +31,7 @@ jobs:
       - name: Setup gradle
         uses: gradle/actions/setup-gradle@v3
         with:
-          gradle-version: "8.7"
+          gradle-version: "8.8"
       - name: Initialize CodeQL
         uses: github/codeql-action/init@v3
         with:
