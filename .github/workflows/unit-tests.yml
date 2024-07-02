@@ -18,4 +18,4 @@ on: # yamllint disable-line rule:truthy
 jobs:
   gradle:
     name: Gradle
-    uses: fabasoad/reusable-workflows/.github/workflows/wf-java-unit-tests.yml@feat/java-ut
+    uses: fabasoad/reusable-workflows/.github/workflows/wf-java-unit-tests.yml@main

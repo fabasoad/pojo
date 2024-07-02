@@ -13,8 +13,7 @@ jobs:
     permissions:
       contents: read
       security-events: write
-    uses: fabasoad/reusable-workflows/.github/workflows/wf-security-sast.yml@feat/java-ut
+    uses: fabasoad/reusable-workflows/.github/workflows/wf-security-sast.yml@main
     with:
       code-scanning-languages: "java"
       code-scanning-build-mode: "manual"
-      code-scanning-build-command: "./gradlew build"
