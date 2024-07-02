@@ -8,13 +8,13 @@ repos:
     hooks:
       - id: build
         name: Build
-        entry: ./gradlew build
+        entry: make build
         language: system
         pass_filenames: false
         verbose: true
       - id: test
         name: Unit tests
-        entry: ./gradlew test
+        entry: make test
         language: system
         pass_filenames: false
         verbose: true
