@@ -1,37 +1,21 @@
 ---
 name: Unit Tests
 
-on:
+on: # yamllint disable-line rule:truthy
+  pull_request:
+    paths:
+      - gradle/**
+      - tasks/Makefile.java.mk
+      - Makefile
+      - src/**
+      - build.gradle
+      - ./gradlew
+      - ./gradlew.bat
   push:
     branches:
-      - 'main'
-  pull_request:
+      - main
 
 jobs:
-  unit-tests:
-    name: Test
-    timeout-minutes: 5
-    runs-on: ubuntu-latest
-    steps:
-      - name: Checkout ${{ github.repository }}
-        uses: actions/checkout@v4
-      - name: Get versions
-        id: versions
-        run: |
-          java_version=$(grep -Eo 'java [a-z0-9.-]+' .tool-versions | cut -d'-' -f2)
-          echo "java=$java_version" >> $GITHUB_OUTPUT
-      - name: Setup Java
-        uses: actions/setup-java@v4
-        with:
-          java-version: ${{ steps.versions.outputs.java }}
-          distribution: temurin
-      - name: Setup gradle
-        uses: gradle/actions/setup-gradle@v3
-        with:
-          gradle-version: "8.8"
-      - name: Build
-        env:
-          SKIP_FINALIZE: true
-        run: ./gradlew build
-      - name: Unit tests
-        run: ./gradlew test
+  gradle:
+    name: Gradle
+    uses: fabasoad/reusable-workflows/.github/workflows/wf-java-unit-tests.yml@feat/java-ut
