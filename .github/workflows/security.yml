@@ -2,68 +2,19 @@
 name: Security
 
 on: # yamllint disable-line rule:truthy
+  pull_request: {}
   push:
     branches:
-      - 'main'
-  pull_request:
-
-defaults:
-  run:
-    shell: sh
+      - main
 
 jobs:
-  code-scanning:
-    name: Code scanning
-    runs-on: ubuntu-latest
-    steps:
-      - name: Checkout ${{ github.repository }}
-        uses: actions/checkout@v4
-      - name: Get versions
-        id: versions
-        run: |
-          java_version=$(grep -Eo 'java [a-z0-9.-]+' .tool-versions | cut -d'-' -f2)
-          echo "java=${java_version}" >> $GITHUB_OUTPUT
-      - name: Setup Java
-        uses: actions/setup-java@v4
-        with:
-          java-version: ${{ steps.versions.outputs.java }}
-          distribution: temurin
-      - name: Setup gradle
-        uses: gradle/actions/setup-gradle@v3
-        with:
-          gradle-version: "8.8"
-      - name: Initialize CodeQL
-        uses: github/codeql-action/init@v3
-        with:
-          languages: "java"
-      - name: Build
-        env:
-          SKIP_FINALIZE: true
-        run: ./gradlew build
-      - name: Perform CodeQL Analysis
-        id: codeql-analysis
-        uses: github/codeql-action/analyze@v3
-      - name: Upload to GHAS
-        if: always()
-        uses: github/codeql-action/upload-sarif@v3
-        with:
-          category: "code-scanning"
-          sarif_file: "${{ steps.codeql-analysis.outputs.sarif-output }}"
-  directory-scanning:
-    name: Directory scanning
-    runs-on: ubuntu-latest
-    steps:
-      - name: Checkout ${{ github.repository }}
-        uses: actions/checkout@v4
-      - name: Scan current project
-        id: scan-directory
-        uses: anchore/scan-action@v3
-        with:
-          by-cve: "true"
-          path: "."
-      - name: Upload to GHAS
-        if: always()
-        uses: github/codeql-action/upload-sarif@v3
-        with:
-          category: "directory-scanning"
-          sarif_file: "${{ steps.scan-directory.outputs.sarif }}"
+  sast:
+    name: SAST
+    permissions:
+      contents: read
+      security-events: write
+    uses: fabasoad/reusable-workflows/.github/workflows/wf-security-sast.yml@feat/java-ut
+    with:
+      code-scanning-languages: "java"
+      code-scanning-build-mode: "manual"
+      code-scanning-build-command: "./gradlew build"

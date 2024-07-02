@@ -26,7 +26,7 @@ repos:
       - id: detect-secrets
         stages: ["commit", "push"]
   - repo: https://github.com/gitleaks/gitleaks
-    rev: v8.18.3
+    rev: v8.18.4
     hooks:
       - id: gitleaks
         stages: ["commit", "push"]
@@ -34,6 +34,14 @@ repos:
     rev: v0.6.2
     hooks:
       - id: snyk-test
+        stages: ["push"]
+  - repo: https://github.com/fabasoad/pre-commit-grype
+    rev: v0.3.1
+    hooks:
+      - id: grype-dir
+        args:
+          - --grype-args=--by-cve --fail-on=low
+          - --hook-args=--log-level debug
         stages: ["push"]
   # Java
   - repo: https://github.com/dustinsand/pre-commit-jvm
