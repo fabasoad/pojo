@@ -19,17 +19,17 @@ jobs:
       - name: Get versions
         id: versions
         run: |
-          java_version=$(grep -Eo 'java [a-z0-9.-]+' .tool-versions | cut -d'-' -f2)
-          echo "java=$java_version" >> "$GITHUB_OUTPUT"
+          gradle_version=$(grep -Eo 'gradle [a-z0-9.-]+' .tool-versions | cut -d'-' -f2)
+          echo "gradle=${gradle_version}" >> "$GITHUB_OUTPUT"
       - name: Setup Java
         uses: actions/setup-java@v4
         with:
-          java-version: ${{ steps.versions.outputs.java }}
-          distribution: temurin
+          java-version-file: ".tool-versions"
+          distribution: "temurin"
       - name: Setup gradle
         uses: gradle/actions/setup-gradle@v3
         with:
-          gradle-version: "8.8"
+          gradle-version: "${{ steps.versions.outputs.gradle }}"
       - name: Publish package
         run: gradle publish
         env:
