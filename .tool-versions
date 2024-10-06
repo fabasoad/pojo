@@ -1,4 +1,4 @@
 gradle 8.10
-java openjdk-22
+java openjdk-23
 coursier 2.1.9
 pre-commit 3.8.0
