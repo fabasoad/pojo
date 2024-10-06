@@ -11,3 +11,6 @@ java/test: ## Runs unit tests with coverage
 
 java/update: ## Updates dependencies to the latest version
 	@./gradlew dependencyUpdates -Drevision=releas
+
+java/clean: ## Removes build directory
+	@./gradlew clean
