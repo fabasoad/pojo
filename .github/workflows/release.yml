@@ -9,6 +9,6 @@ on: # yamllint disable-line rule:truthy
 jobs:
   github:
     name: GitHub
-    uses: fabasoad/reusable-workflows/.github/workflows/wf-github-release.yml@dependabot/github_actions/zaproxy/action-api-scan-0.8.0
+    uses: fabasoad/reusable-workflows/.github/workflows/wf-github-release.yml@main
     with:
       bump-tags: false

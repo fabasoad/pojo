@@ -16,11 +16,6 @@ jobs:
     steps:
       - name: Checkout ${{ github.repository }}
         uses: actions/checkout@v4
-      - name: Get versions
-        id: versions
-        run: |
-          gradle_version=$(grep -Eo 'gradle [a-z0-9.-]+' .tool-versions | cut -d'-' -f2)
-          echo "gradle=${gradle_version}" >> "$GITHUB_OUTPUT"
       - name: Setup Java
         uses: actions/setup-java@v4
         with:
@@ -28,9 +23,8 @@ jobs:
           distribution: "temurin"
       - name: Setup gradle
         uses: gradle/actions/setup-gradle@v4
-        with:
-          gradle-version: "${{ steps.versions.outputs.gradle }}"
       - name: Publish package
-        run: gradle publish
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: gradle publish
+        shell: sh
