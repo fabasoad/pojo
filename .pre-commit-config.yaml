@@ -1,6 +1,6 @@
 ---
 default_install_hook_types: ["pre-commit", "pre-push"]
-default_stages: ["commit"]
+default_stages: ["pre-commit"]
 exclude: ^(gradlew.*)$
 minimum_pre_commit_version: 2.18.0
 repos:
@@ -18,18 +18,18 @@ repos:
         language: system
         pass_filenames: false
         verbose: true
-        stages: ["push"]
+        stages: ["pre-push"]
   # Security
   - repo: https://github.com/Yelp/detect-secrets
     rev: v1.5.0
     hooks:
       - id: detect-secrets
-        stages: ["commit", "push"]
+        stages: ["pre-commit", "pre-push"]
   - repo: https://github.com/gitleaks/gitleaks
     rev: v8.21.3
     hooks:
       - id: gitleaks
-        stages: ["commit", "push"]
+        stages: ["pre-commit", "pre-push"]
   - repo: https://github.com/fabasoad/pre-commit-snyk
     rev: v1.0.0
     hooks:
@@ -37,7 +37,7 @@ repos:
         args:
           - --snyk-args=--all-projects --severity-threshold=low
           - --hook-args=--log-level debug
-        stages: ["push"]
+        stages: ["pre-push"]
   - repo: https://github.com/fabasoad/pre-commit-grype
     rev: v0.6.1
     hooks:
@@ -45,7 +45,7 @@ repos:
         args:
           - --grype-args=--by-cve --fail-on=low
           - --hook-args=--log-level debug
-        stages: ["push"]
+        stages: ["pre-push"]
   # Java
   - repo: https://github.com/dustinsand/pre-commit-jvm
     rev: v0.11.0
@@ -75,7 +75,7 @@ repos:
       - id: check-merge-conflict
       - id: check-json
       - id: detect-private-key
-        stages: ["commit", "push"]
+        stages: ["pre-commit", "pre-push"]
       - id: end-of-file-fixer
       - id: mixed-line-ending
         args: ["--fix=lf"]
