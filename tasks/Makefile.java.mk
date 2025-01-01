@@ -7,7 +7,7 @@ java/global: ## Sets Java version of this project as a global Java version
 	@grep -Eo 'java [0-9.-]+' .tool-versions | xargs asdf global
 
 java/test: ## Runs unit tests with coverage
-	@./gradlew test
+	@./gradlew test --warning-mode all
 
 java/update: ## Updates dependencies to the latest version
 	@./gradlew dependencyUpdates -Drevision=releas
