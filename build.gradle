@@ -5,8 +5,8 @@ plugins {
     id 'com.github.ben-manes.versions' version '0.51.0'
 }
 
-group 'io.fabasoad'
-version '0.2.3'
+group = 'io.fabasoad'
+version = '0.2.3'
 
 repositories {
     mavenCentral()
