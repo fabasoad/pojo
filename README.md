@@ -5,7 +5,6 @@
 ![unit-tests](https://github.com/fabasoad/pojo/actions/workflows/unit-tests.yml/badge.svg)
 ![security](https://github.com/fabasoad/pojo/actions/workflows/security.yml/badge.svg)
 ![linting](https://github.com/fabasoad/pojo/actions/workflows/linting.yml/badge.svg)
-[![Known Vulnerabilities](https://snyk.io/test/github/fabasoad/pojo/badge.svg)](https://snyk.io/test/github/fabasoad/pojo)
 
 ## Import
 
@@ -70,3 +69,7 @@ class PojoSpec extends Specification {
   }
 }
 ```
+
+## Contributions
+
+![Alt](https://repobeats.axiom.co/api/embed/7a892bda2ac0a8dbfc492b849fb9030a6ed37ea4.svg "Repobeats analytics image")
