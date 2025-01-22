@@ -1,3 +1,5 @@
+import org.gradle.api.internal.TaskInternal
+
 plugins {
     id 'groovy'
     id 'java'
@@ -15,7 +17,7 @@ repositories {
 dependencies {
     implementation 'com.google.guava:guava:33.4.0-jre'
     implementation 'org.apache.groovy:groovy-all:4.0.24'
-    testImplementation 'org.spockframework:spock-core:2.4-M4-groovy-4.0'
+    testImplementation 'org.spockframework:spock-core:2.4-M5-groovy-4.0'
 }
 
 dependencyLocking {
@@ -48,15 +50,29 @@ publishing {
     }
 }
 
-def taskMake = tasks.register('make') {
-    onlyIf {
-        System.getenv('SKIP_FINALIZE') == null || System.getenv('SKIP_FINALIZE') == 'false'
+abstract class MakeInstallTask extends DefaultTask {
+    private ExecOperations execOperations
+
+    @Inject
+    MakeInstallTask(ExecOperations execOperations) {
+        this.execOperations = execOperations
     }
-    doLast {
-        exec {
+
+    @Override
+    Spec<? super TaskInternal> getOnlyIf() {
+        return {
+            System.getenv('SKIP_FINALIZE') != 'true'
+        }
+    }
+
+    @TaskAction
+    void doTaskAction() {
+        execOperations.exec {
             commandLine 'make', 'install'
         }
     }
 }
+
+def taskMake = tasks.register('make', MakeInstallTask)
 
 build.configure { finalizedBy taskMake }
