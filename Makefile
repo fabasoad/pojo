@@ -1,8 +1,8 @@
 -include tasks/Makefile.*.mk
 
-.PHONY: build install test update
+.PHONY: build install test update clean
 
-.DEFAULT_GOAL := help
+.DEFAULT_GOAL := build
 
 build: java/build ## (Recommended) Builds the whole project
 

@@ -26,12 +26,12 @@ repos:
       - id: detect-secrets
         stages: ["pre-commit", "pre-push"]
   - repo: https://github.com/gitleaks/gitleaks
-    rev: v8.23.1
+    rev: v8.23.3
     hooks:
       - id: gitleaks
         stages: ["pre-commit", "pre-push"]
   - repo: https://github.com/fabasoad/pre-commit-snyk
-    rev: v1.0.0
+    rev: v1.0.2
     hooks:
       - id: snyk-test
         args:
@@ -39,7 +39,7 @@ repos:
           - --hook-args=--log-level debug
         stages: ["pre-push"]
   - repo: https://github.com/fabasoad/pre-commit-grype
-    rev: v0.6.1
+    rev: v0.6.3
     hooks:
       - id: grype-dir
         args:
@@ -47,7 +47,7 @@ repos:
           - --hook-args=--log-level debug
         stages: ["pre-push"]
   - repo: https://github.com/fabasoad/pre-commit-checkstyle
-    rev: v0.1.3
+    rev: v0.1.5
     hooks:
       - id: checkstyle-google
         args:
@@ -55,7 +55,7 @@ repos:
           - --hook-args=--log-level debug
         stages: ["pre-push"]
   - repo: https://github.com/google/osv-scanner
-    rev: v1.9.1
+    rev: v2.0.0-beta1
     hooks:
       - id: osv-scanner
         args:
@@ -76,7 +76,7 @@ repos:
         args: [--autofix]
   # Markdown
   - repo: https://github.com/igorshubovych/markdownlint-cli
-    rev: v0.43.0
+    rev: v0.44.0
     hooks:
       - id: markdownlint
   # Yaml

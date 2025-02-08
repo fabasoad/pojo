@@ -14,13 +14,8 @@
 
 ### Maven
 
-```xml
-<dependency>
-  <groupId>io.fabasoad</groupId>
-  <artifactId>pojo</artifactId>
-  <version>0.2.1</version>
-</dependency>
-```
+[Here](https://github.com/fabasoad/pojo/packages/931918) is an example on how to
+use it with maven.
 
 ## Examples
 
