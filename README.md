@@ -14,8 +14,8 @@
 
 ### Maven
 
-[Here](https://github.com/fabasoad/pojo/packages/931918) is an example on how to
-use it with maven.
+See [example](https://github.com/fabasoad/pojo/packages/931918) on how to use it
+with maven.
 
 ## Examples
 
