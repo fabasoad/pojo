@@ -19,3 +19,4 @@ jobs:
       code-scanning: true
       code-scanning-languages: "java"
       sca: true
+      sca-vendor: osv-scanner
