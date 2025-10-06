@@ -1,5 +1,8 @@
 .PHONY: java/build java/global java/test java/update
 
+java/install: ## Installs all the dependencies and writes the exact versions to 'gradle.lockfile'
+	@./gradlew dependencies --write-locks
+
 java/build: ## Builds the whole project using gradle
 	@./gradlew build --refresh-dependencies --warning-mode all
 
