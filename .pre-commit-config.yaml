@@ -26,7 +26,7 @@ repos:
       - id: detect-secrets
         stages: ["pre-commit", "pre-push"]
   - repo: https://github.com/gitleaks/gitleaks
-    rev: v8.29.0
+    rev: v8.29.1
     hooks:
       - id: gitleaks
         stages: ["pre-commit", "pre-push"]
@@ -55,7 +55,7 @@ repos:
           - --hook-args=--log-level debug
         stages: ["pre-push"]
   - repo: https://github.com/google/osv-scanner
-    rev: v2.2.4
+    rev: v2.3.0
     hooks:
       - id: osv-scanner
         args:
@@ -76,7 +76,7 @@ repos:
         args: [--autofix]
   # Markdown
   - repo: https://github.com/igorshubovych/markdownlint-cli
-    rev: v0.45.0
+    rev: v0.46.0
     hooks:
       - id: markdownlint
   # Yaml
