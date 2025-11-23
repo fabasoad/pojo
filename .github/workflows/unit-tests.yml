@@ -19,3 +19,5 @@ jobs:
   gradle:
     name: Gradle
     uses: fabasoad/reusable-workflows/.github/workflows/wf-java-unit-tests.yml@main
+    permissions:
+      contents: read
