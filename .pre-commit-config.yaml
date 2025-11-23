@@ -84,6 +84,13 @@ repos:
     rev: v1.37.1
     hooks:
       - id: yamllint
+  # GitHub Actions
+  - repo: https://github.com/rhysd/actionlint
+    rev: v1.7.9
+    hooks:
+      - id: actionlint
+        args: ["-pyflakes="]
+        stages: ["pre-commit"]
   # Other
   - repo: https://github.com/pre-commit/pre-commit-hooks
     rev: v6.0.0
