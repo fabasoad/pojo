@@ -1,6 +1,6 @@
 -include tasks/Makefile.*.mk
 
-.PHONY: build install dev-install test update clean
+.PHONY: build install dev-install test update clean outdated
 
 .DEFAULT_GOAL := build
 
@@ -15,3 +15,5 @@ test: java/test ## (Recommended) Runs unit tests
 update: java/update ## (Recommended) Updates dependencies to the latest version
 
 clean: java/clean ## (Recommended) Removes build directory
+
+outdated: java/outdated ## (Recommended) Shows outdated dependencies

@@ -1,4 +1,4 @@
-.PHONY: java/build java/global java/test java/update
+.PHONY: java/build java/global java/test java/update java/outdated
 
 java/install: ## Installs all the dependencies and writes the exact versions to 'gradle.lockfile'
 	@./gradlew dependencies --write-locks
@@ -17,3 +17,6 @@ java/update: ## Updates dependencies to the latest version
 
 java/clean: ## Removes build directory
 	@./gradlew clean
+
+java/outdated: ## Shows outdated dependencies
+	@./gradlew dependencyUpdates
