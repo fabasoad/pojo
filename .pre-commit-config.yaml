@@ -47,7 +47,7 @@ repos:
           - --hook-args=--log-level debug
         stages: ["pre-push"]
   - repo: https://github.com/fabasoad/pre-commit-checkstyle
-    rev: v0.1.7
+    rev: v0.1.8
     hooks:
       - id: checkstyle-google
         args:
@@ -86,7 +86,7 @@ repos:
       - id: yamllint
   # GitHub Actions
   - repo: https://github.com/rhysd/actionlint
-    rev: v1.7.9
+    rev: v1.7.10
     hooks:
       - id: actionlint
         args: ["-pyflakes="]
