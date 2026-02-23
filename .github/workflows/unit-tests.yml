@@ -9,8 +9,8 @@ on: # yamllint disable-line rule:truthy
       - Makefile
       - src/**
       - build.gradle
-      - ./gradlew
-      - ./gradlew.bat
+      - gradlew
+      - gradlew.bat
   push:
     branches:
       - main
