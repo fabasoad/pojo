@@ -21,7 +21,7 @@ class PojoValidatorSpec extends Specification {
     then:
     expected.size() == validator.classes().size()
     0 == validator.testers().size()
-    [] == ((expected - actual) + (actual - expected))
+    [] == (expected - actual)
 
     where:
     packageName                                 | expected
@@ -40,7 +40,7 @@ class PojoValidatorSpec extends Specification {
     then:
     expected.size() == validator.classes().size()
     0 == validator.testers().size()
-    [] == ((expected - actual) + (actual - expected))
+    [] == (expected - actual)
 
     where:
     recursive | packageName                                 | expected

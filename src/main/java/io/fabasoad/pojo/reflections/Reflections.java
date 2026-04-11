@@ -15,7 +15,7 @@ public class Reflections {
   public Set<Class<?>> getClasses(final String packageName, final boolean recursive) {
     final ClassPath classPath;
     try {
-      classPath = ClassPath.from(ClassLoader.getSystemClassLoader());
+      classPath = ClassPath.from(Thread.currentThread().getContextClassLoader());
     } catch (IOException e) {
       throw new ReflectionsException("Failed to read class path", e);
     }
