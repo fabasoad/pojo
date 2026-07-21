@@ -17,3 +17,5 @@ update: java/update ## (Recommended) Updates dependencies to the latest version
 clean: java/clean ## (Recommended) Removes build directory
 
 outdated: java/outdated ## (Recommended) Shows outdated dependencies
+
+audit: java/audit ## (Recommended) Runs security analysis

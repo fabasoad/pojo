@@ -5,6 +5,7 @@ plugins {
     id 'java'
     id 'maven-publish'
     id 'com.github.ben-manes.versions' version '0.54.0'
+    id 'org.owasp.dependencycheck' version '12.2.2'
 }
 
 group = 'io.fabasoad'
@@ -16,8 +17,14 @@ repositories {
 
 dependencies {
     implementation 'com.google.guava:guava:33.6.0-jre'
-    implementation 'org.apache.groovy:groovy-all:5.0.6'
+    implementation 'org.apache.groovy:groovy-all:6.0.0-alpha-2'
     testImplementation 'org.spockframework:spock-core:2.4-groovy-5.0'
+}
+
+dependencyCheck {
+    nvd {
+        apiKey = System.getenv('NVD_API_KEY')
+    }
 }
 
 dependencyLocking {
@@ -26,6 +33,10 @@ dependencyLocking {
 
 test {
     useJUnitPlatform()
+}
+
+tasks.withType(GroovyCompile).configureEach {
+    groovyOptions.forkOptions.jvmArgs += ['-Dspock.iKnowWhatImDoing.disableGroovyVersionCheck=true']
 }
 
 publishing {

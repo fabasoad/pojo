@@ -1,4 +1,4 @@
-.PHONY: java/build java/global java/test java/update java/outdated
+.PHONY: java/build java/global java/test java/update java/outdated java/audit
 
 java/install: ## Installs all the dependencies and writes the exact versions to 'gradle.lockfile'
 	@./gradlew dependencies --write-locks
@@ -20,3 +20,6 @@ java/clean: ## Removes build directory
 
 java/outdated: ## Shows outdated dependencies
 	@./gradlew dependencyUpdates
+
+java/audit: ## Runs dependencyCheckAnalyze command from org.owasp.dependencycheck plugin
+	@./gradlew dependencyCheckAnalyze
