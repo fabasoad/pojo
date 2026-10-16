@@ -19,6 +19,14 @@ dependencies {
     implementation 'com.google.guava:guava:33.7.2-jre'
     implementation 'org.apache.groovy:groovy-all:6.0.0'
     testImplementation 'org.spockframework:spock-core:2.5-groovy-6.0'
+    constraints {
+        implementation("com.fasterxml.jackson.core:jackson-core:2.22.3") {
+            because("previous versions have a CVSS 7.5 vulnerabilities")
+        }
+        implementation("com.fasterxml.jackson.core:jackson-databind:2.22.3") {
+            because("previous versions have a CVSS 7.5 vulnerabilities")
+        }
+    }
 }
 
 dependencyCheck {

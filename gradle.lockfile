@@ -3,11 +3,11 @@
 # This file is expected to be part of source control.
 # To regenerate this file, run: ./gradlew :dependencies --write-locks
 com.fasterxml.jackson.core:jackson-annotations:2.22=runtimeClasspath,testRuntimeClasspath
-com.fasterxml.jackson.core:jackson-core:2.22.2=runtimeClasspath,testRuntimeClasspath
-com.fasterxml.jackson.core:jackson-databind:2.22.2=runtimeClasspath,testRuntimeClasspath
-com.fasterxml.jackson.dataformat:jackson-dataformat-yaml:2.22.2=runtimeClasspath,testRuntimeClasspath
-com.fasterxml.jackson.datatype:jackson-datatype-jsr310:2.22.2=runtimeClasspath,testRuntimeClasspath
-com.fasterxml.jackson:jackson-bom:2.22.2=runtimeClasspath,testRuntimeClasspath
+com.fasterxml.jackson.core:jackson-core:2.22.3=runtimeClasspath,testRuntimeClasspath
+com.fasterxml.jackson.core:jackson-databind:2.22.3=runtimeClasspath,testRuntimeClasspath
+com.fasterxml.jackson.dataformat:jackson-dataformat-yaml:2.22.3=runtimeClasspath,testRuntimeClasspath
+com.fasterxml.jackson.datatype:jackson-datatype-jsr310:2.22.3=runtimeClasspath,testRuntimeClasspath
+com.fasterxml.jackson:jackson-bom:2.22.3=runtimeClasspath,testRuntimeClasspath
 com.fasterxml.woodstox:woodstox-core:7.2.1=runtimeClasspath,testRuntimeClasspath
 com.formdev:flatlaf-extras:3.7.2=runtimeClasspath,testRuntimeClasspath
 com.formdev:flatlaf:3.7.2=runtimeClasspath,testRuntimeClasspath
