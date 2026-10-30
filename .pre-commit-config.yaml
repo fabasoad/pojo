@@ -76,7 +76,7 @@ repos:
         args: [--autofix, --google-java-formatter-version=1.37.0]
   # Markdown
   - repo: https://github.com/igorshubovych/markdownlint-cli
-    rev: v0.49.1
+    rev: v0.50.0
     hooks:
       - id: markdownlint
   # Yaml
