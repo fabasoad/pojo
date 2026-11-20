@@ -2,21 +2,21 @@
 # Manual edits can break the build and are not advised.
 # This file is expected to be part of source control.
 # To regenerate this file, run: ./gradlew :dependencies --write-locks
-com.fasterxml.jackson.core:jackson-annotations:2.22=runtimeClasspath,testRuntimeClasspath
-com.fasterxml.jackson.core:jackson-core:2.22.3=runtimeClasspath,testRuntimeClasspath
-com.fasterxml.jackson.core:jackson-databind:2.22.3=runtimeClasspath,testRuntimeClasspath
-com.fasterxml.jackson.dataformat:jackson-dataformat-yaml:2.22.3=runtimeClasspath,testRuntimeClasspath
-com.fasterxml.jackson.datatype:jackson-datatype-jsr310:2.22.3=runtimeClasspath,testRuntimeClasspath
-com.fasterxml.jackson:jackson-bom:2.22.3=runtimeClasspath,testRuntimeClasspath
+com.fasterxml.jackson.core:jackson-annotations:2.23=runtimeClasspath,testRuntimeClasspath
+com.fasterxml.jackson.core:jackson-core:2.23.0=runtimeClasspath,testRuntimeClasspath
+com.fasterxml.jackson.core:jackson-databind:2.23.0=runtimeClasspath,testRuntimeClasspath
+com.fasterxml.jackson.dataformat:jackson-dataformat-yaml:2.23.0=runtimeClasspath,testRuntimeClasspath
+com.fasterxml.jackson.datatype:jackson-datatype-jsr310:2.23.0=runtimeClasspath,testRuntimeClasspath
+com.fasterxml.jackson:jackson-bom:2.23.0=runtimeClasspath,testRuntimeClasspath
 com.fasterxml.woodstox:woodstox-core:7.2.1=runtimeClasspath,testRuntimeClasspath
 com.formdev:flatlaf-extras:3.7.2=runtimeClasspath,testRuntimeClasspath
 com.formdev:flatlaf:3.7.2=runtimeClasspath,testRuntimeClasspath
 com.github.javaparser:javaparser-core:3.28.2=compileClasspath,runtimeClasspath,testCompileClasspath,testRuntimeClasspath
 com.github.weisj:jsvg:2.1.0=runtimeClasspath,testRuntimeClasspath
 com.google.code.gson:gson:2.14.0=runtimeClasspath,testRuntimeClasspath
-com.google.errorprone:error_prone_annotations:2.50.0=compileClasspath,runtimeClasspath,testCompileClasspath,testRuntimeClasspath
+com.google.errorprone:error_prone_annotations:2.52.0=compileClasspath,runtimeClasspath,testCompileClasspath,testRuntimeClasspath
 com.google.guava:failureaccess:1.0.3=compileClasspath,runtimeClasspath,testCompileClasspath,testRuntimeClasspath
-com.google.guava:guava:33.7.2-jre=compileClasspath,runtimeClasspath,testCompileClasspath,testRuntimeClasspath
+com.google.guava:guava:33.8.0-jre=compileClasspath,runtimeClasspath,testCompileClasspath,testRuntimeClasspath
 com.google.guava:listenablefuture:9999.0-empty-to-avoid-conflict-with-guava=compileClasspath,runtimeClasspath,testCompileClasspath,testRuntimeClasspath
 com.google.j2objc:j2objc-annotations:3.1=compileClasspath,runtimeClasspath,testCompileClasspath,testRuntimeClasspath
 commons-codec:commons-codec:1.22.1=runtimeClasspath,testRuntimeClasspath
